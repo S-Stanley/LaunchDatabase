@@ -1,21 +1,20 @@
-def search(search: str):
+def search(search: str, table: str):
 	try:
-		data = open('database.xls', 'r')
+		data = open(f'{table}.xls', 'r')
 		for item in data:
 			array = item.split(',')
 			if array[0] == search:
 				data.close()
-				return array[1]
+				return array[1].replace(' ', '').capitalize()
 		data.close()
 		return None
 	except Exception as e:
 		print(e)
 		return False
 
-
-def write(data: str):
+def write(data: str, table: str):
 	try:
-		f = open('database.xls', 'a')
+		f = open(f'{table}.xls', 'a')
 		f.write(f'{data}\n')
 		f.close()
 		return True
@@ -31,7 +30,7 @@ def create_table(name: str):
 		print(e)
 		return False
 
-# res = search("")
-# res = write("hello, bonjour")
-# res = create_table("hello")
+res = search('bonjour', 'langue')
+# res = write("salut, français", "langue")
+# res = create_table("langue")
 print(res)
