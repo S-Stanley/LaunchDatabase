@@ -24,6 +24,6 @@ def write(data: str):
 		print(e)
 		return False
 
-res = search("oxford")
-# res = write('oxford, royaume uni')
-print(res)
+# res = search("")
+res = write("")
+# print(res)
