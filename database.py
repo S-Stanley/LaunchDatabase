@@ -1,7 +1,6 @@
 def search(search: str):
 	try:
 		data = open('database.xls', 'r')
-
 		for item in data:
 			array = item.split(',')
 			if array[0] == search:
@@ -24,6 +23,15 @@ def write(data: str):
 		print(e)
 		return False
 
+def create_table(name: str):
+	try:
+		f = open(f'{name}.xls', 'w')
+		return True
+	except Exception as e:
+		print(e)
+		return False
+
 # res = search("")
-res = write("")
-# print(res)
+# res = write("hello, bonjour")
+# res = create_table("hello")
+print(res)
